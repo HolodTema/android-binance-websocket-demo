@@ -35,6 +35,12 @@ android {
 }
 
 dependencies {
+    //Websockets
+    implementation(libs.java.websocket)
+    
+    //Gson
+    implementation(libs.gson)
+
     // Hilt
     implementation(libs.android.hilt)
     ksp(libs.android.hilt.compiler)
