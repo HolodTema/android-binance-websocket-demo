@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+    // to use viewModelScope
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
     // Hilt
     implementation(libs.android.hilt)
     ksp(libs.android.hilt.compiler)

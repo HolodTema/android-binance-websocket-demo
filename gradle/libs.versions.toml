@@ -12,6 +12,10 @@ jetbrainsKotlinJvm = "2.2.10"
 hilt = "2.59.2"
 ksp = "2.2.10-RC2-2.0.2"
 javaxInject = "1"
+gson = "2.13.2"
+javaWebsocket = "1.5.4"
+lifecycle = "2.10.0"
+coroutines = "1.10.2"
 
 
 
@@ -29,6 +33,14 @@ android-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref
 android-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 # javax.inject.Inject annotation for domain layer
 javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "javaxInject" }
+# Gson
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+# Websockets
+java-websocket = { group = "org.java-websocket", name = "Java-WebSocket", version.ref = "javaWebsocket" }
+# to use viewModelScope
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+# to support Flow and StateFlow and SharedFlow in domain layer
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines"}
 
 
 
