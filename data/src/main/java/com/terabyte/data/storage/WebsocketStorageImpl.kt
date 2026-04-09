@@ -6,7 +6,6 @@ import com.terabyte.domain.model.ErrorModel
 import com.terabyte.domain.model.MessageModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -21,9 +20,11 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class WebsocketStorageImpl @Inject constructor(
-    private var webSocketClient: WebSocketClient? = null,
-) : WebsocketStorage {
+class WebsocketStorageImpl @Inject constructor() : WebsocketStorage {
+
+    //we do not provide websocketClient via DI, because of it lives during connection lives
+    //and it is nullable
+    private var webSocketClient: WebSocketClient? = null
 
     private val _connectionStatus = MutableStateFlow(ConnectionStatusModel.DISCONNECTED)
     override val connectionStatus: StateFlow<ConnectionStatusModel>

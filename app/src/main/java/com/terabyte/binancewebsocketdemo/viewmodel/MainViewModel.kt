@@ -9,6 +9,7 @@ import com.terabyte.domain.usecase.DisconnectWebsocketUseCase
 import com.terabyte.domain.usecase.GetConnectionStatusUseCase
 import com.terabyte.domain.usecase.GetMessagesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
