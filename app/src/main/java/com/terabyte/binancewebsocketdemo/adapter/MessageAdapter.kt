@@ -10,7 +10,7 @@ import java.util.Locale
 
 class MessageAdapter(
     private val inflater: LayoutInflater,
-    private var messages: List<MessageModel>
+    var messages: List<MessageModel>
 ) : RecyclerView.Adapter<MessageAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): Holder {
