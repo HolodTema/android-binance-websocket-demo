@@ -4,18 +4,20 @@ import com.terabyte.domain.model.ConnectionStatusModel
 import com.terabyte.domain.model.ErrorModel
 import com.terabyte.domain.model.MessageModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 
 interface WebsocketRepository {
 
     val connectionStatus: StateFlow<ConnectionStatusModel>
 
+    val messages: SharedFlow<MessageModel>
+
+    val errors: SharedFlow<ErrorModel>
+
     suspend fun connectWebsocket()
 
     suspend fun disconnectWebsocket()
 
-    fun observeMessages(): Flow<MessageModel>
-
-    fun observeErrors(): Flow<ErrorModel>
-
+    suspend fun sendMessage(messageModel: MessageModel)
 }

@@ -6,6 +6,7 @@ import com.terabyte.domain.model.ErrorModel
 import com.terabyte.domain.model.MessageModel
 import com.terabyte.domain.repository.WebsocketRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -18,6 +19,12 @@ class WebsocketRepositoryImpl @Inject constructor(
     override val connectionStatus: StateFlow<ConnectionStatusModel>
         get() = websocketStorage.connectionStatus
 
+    override val messages: SharedFlow<MessageModel>
+        get() = websocketStorage.messages
+
+    override val errors: SharedFlow<ErrorModel>
+        get() = websocketStorage.errors
+
     override suspend fun connectWebsocket() {
         websocketStorage.connectWebsocket()
     }
@@ -26,11 +33,7 @@ class WebsocketRepositoryImpl @Inject constructor(
         websocketStorage.disconnectWebsocket()
     }
 
-    override fun observeMessages(): Flow<MessageModel> {
-        return websocketStorage.observeMessages()
-    }
-
-    override fun observeErrors(): Flow<ErrorModel> {
-        return websocketStorage.observeErrors()
+    override suspend fun sendMessage(messageModel: MessageModel) {
+        websocketStorage.sendMessage(messageModel)
     }
 }
