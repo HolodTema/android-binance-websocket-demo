@@ -34,7 +34,7 @@ javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "j
 # Gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 # Websockets
-java-websocket = { group = "org.java-websocket", name = "java-WebSocket", version.ref = "javaWebsocket"}
+java-websocket = { group = "org.java-websocket", name = "Java-WebSocket", version.ref = "javaWebsocket"}
 
 
 [plugins]
