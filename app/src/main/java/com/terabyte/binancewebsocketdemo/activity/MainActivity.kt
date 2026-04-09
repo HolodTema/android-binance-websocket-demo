@@ -1,10 +1,11 @@
-package com.terabyte.binancewebsocketdemo
+package com.terabyte.binancewebsocketdemo.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.terabyte.binancewebsocketdemo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
