@@ -37,7 +37,7 @@ android {
 dependencies {
     //Websockets
     implementation(libs.java.websocket)
-    
+
     //Gson
     implementation(libs.gson)
 
